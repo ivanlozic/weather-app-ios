@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		843E379F2DA15B23004A2BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 843E377D2DA15B21004A2BC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 843E37842DA15B21004A2BC0;
+			remoteInfo = "weather-app-kantun";
+		};
+		843E37A92DA15B23004A2BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 843E377D2DA15B21004A2BC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 843E37842DA15B21004A2BC0;
+			remoteInfo = "weather-app-kantun";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		843E37852DA15B21004A2BC0 /* weather-app-kantun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-app-kantun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		843E379E2DA15B23004A2BC0 /* weather-app-kantunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weather-app-kantunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		843E37A82DA15B23004A2BC0 /* weather-app-kantunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weather-app-kantunUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		843E37B02DA15B23004A2BC0 /* Exceptions for "weather-app-kantun" folder in "weather-app-kantun" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 843E37842DA15B21004A2BC0 /* weather-app-kantun */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		843E37872DA15B21004A2BC0 /* weather-app-kantun */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				843E37B02DA15B23004A2BC0 /* Exceptions for "weather-app-kantun" folder in "weather-app-kantun" target */,
+			);
+			path = "weather-app-kantun";
+			sourceTree = "<group>";
+		};
+		843E37A12DA15B23004A2BC0 /* weather-app-kantunTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "weather-app-kantunTests";
+			sourceTree = "<group>";
+		};
+		843E37AB2DA15B23004A2BC0 /* weather-app-kantunUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "weather-app-kantunUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		843E37822DA15B21004A2BC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843E379B2DA15B23004A2BC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843E37A52DA15B23004A2BC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		843E377C2DA15B21004A2BC0 = {
+			isa = PBXGroup;
+			children = (
+				843E37872DA15B21004A2BC0 /* weather-app-kantun */,
+				843E37A12DA15B23004A2BC0 /* weather-app-kantunTests */,
+				843E37AB2DA15B23004A2BC0 /* weather-app-kantunUITests */,
+				843E37862DA15B21004A2BC0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		843E37862DA15B21004A2BC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				843E37852DA15B21004A2BC0 /* weather-app-kantun.app */,
+				843E379E2DA15B23004A2BC0 /* weather-app-kantunTests.xctest */,
+				843E37A82DA15B23004A2BC0 /* weather-app-kantunUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		843E37842DA15B21004A2BC0 /* weather-app-kantun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843E37B12DA15B23004A2BC0 /* Build configuration list for PBXNativeTarget "weather-app-kantun" */;
+			buildPhases = (
+				843E37812DA15B21004A2BC0 /* Sources */,
+				843E37822DA15B21004A2BC0 /* Frameworks */,
+				843E37832DA15B21004A2BC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				843E37872DA15B21004A2BC0 /* weather-app-kantun */,
+			);
+			name = "weather-app-kantun";
+			packageProductDependencies = (
+			);
+			productName = "weather-app-kantun";
+			productReference = 843E37852DA15B21004A2BC0 /* weather-app-kantun.app */;
+			productType = "com.apple.product-type.application";
+		};
+		843E379D2DA15B23004A2BC0 /* weather-app-kantunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843E37B62DA15B23004A2BC0 /* Build configuration list for PBXNativeTarget "weather-app-kantunTests" */;
+			buildPhases = (
+				843E379A2DA15B23004A2BC0 /* Sources */,
+				843E379B2DA15B23004A2BC0 /* Frameworks */,
+				843E379C2DA15B23004A2BC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				843E37A02DA15B23004A2BC0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				843E37A12DA15B23004A2BC0 /* weather-app-kantunTests */,
+			);
+			name = "weather-app-kantunTests";
+			packageProductDependencies = (
+			);
+			productName = "weather-app-kantunTests";
+			productReference = 843E379E2DA15B23004A2BC0 /* weather-app-kantunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		843E37A72DA15B23004A2BC0 /* weather-app-kantunUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843E37B92DA15B23004A2BC0 /* Build configuration list for PBXNativeTarget "weather-app-kantunUITests" */;
+			buildPhases = (
+				843E37A42DA15B23004A2BC0 /* Sources */,
+				843E37A52DA15B23004A2BC0 /* Frameworks */,
+				843E37A62DA15B23004A2BC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				843E37AA2DA15B23004A2BC0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				843E37AB2DA15B23004A2BC0 /* weather-app-kantunUITests */,
+			);
+			name = "weather-app-kantunUITests";
+			packageProductDependencies = (
+			);
+			productName = "weather-app-kantunUITests";
+			productReference = 843E37A82DA15B23004A2BC0 /* weather-app-kantunUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		843E377D2DA15B21004A2BC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					843E37842DA15B21004A2BC0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					843E379D2DA15B23004A2BC0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 843E37842DA15B21004A2BC0;
+					};
+					843E37A72DA15B23004A2BC0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 843E37842DA15B21004A2BC0;
+					};
+				};
+			};
+			buildConfigurationList = 843E37802DA15B21004A2BC0 /* Build configuration list for PBXProject "weather-app-kantun" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 843E377C2DA15B21004A2BC0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 843E37862DA15B21004A2BC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				843E37842DA15B21004A2BC0 /* weather-app-kantun */,
+				843E379D2DA15B23004A2BC0 /* weather-app-kantunTests */,
+				843E37A72DA15B23004A2BC0 /* weather-app-kantunUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		843E37832DA15B21004A2BC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843E379C2DA15B23004A2BC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843E37A62DA15B23004A2BC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		843E37812DA15B21004A2BC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843E379A2DA15B23004A2BC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843E37A42DA15B23004A2BC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		843E37A02DA15B23004A2BC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 843E37842DA15B21004A2BC0 /* weather-app-kantun */;
+			targetProxy = 843E379F2DA15B23004A2BC0 /* PBXContainerItemProxy */;
+		};
+		843E37AA2DA15B23004A2BC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 843E37842DA15B21004A2BC0 /* weather-app-kantun */;
+			targetProxy = 843E37A92DA15B23004A2BC0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		843E37B22DA15B23004A2BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "weather-app-kantun/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ivan.weather-app-kantun";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		843E37B32DA15B23004A2BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "weather-app-kantun/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ivan.weather-app-kantun";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		843E37B42DA15B23004A2BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		843E37B52DA15B23004A2BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		843E37B72DA15B23004A2BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ivan.weather-app-kantunTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weather-app-kantun.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/weather-app-kantun";
+			};
+			name = Debug;
+		};
+		843E37B82DA15B23004A2BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ivan.weather-app-kantunTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weather-app-kantun.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/weather-app-kantun";
+			};
+			name = Release;
+		};
+		843E37BA2DA15B23004A2BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ivan.weather-app-kantunUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "weather-app-kantun";
+			};
+			name = Debug;
+		};
+		843E37BB2DA15B23004A2BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ivan.weather-app-kantunUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "weather-app-kantun";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		843E37802DA15B21004A2BC0 /* Build configuration list for PBXProject "weather-app-kantun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843E37B42DA15B23004A2BC0 /* Debug */,
+				843E37B52DA15B23004A2BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843E37B12DA15B23004A2BC0 /* Build configuration list for PBXNativeTarget "weather-app-kantun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843E37B22DA15B23004A2BC0 /* Debug */,
+				843E37B32DA15B23004A2BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843E37B62DA15B23004A2BC0 /* Build configuration list for PBXNativeTarget "weather-app-kantunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843E37B72DA15B23004A2BC0 /* Debug */,
+				843E37B82DA15B23004A2BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843E37B92DA15B23004A2BC0 /* Build configuration list for PBXNativeTarget "weather-app-kantunUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843E37BA2DA15B23004A2BC0 /* Debug */,
+				843E37BB2DA15B23004A2BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 843E377D2DA15B21004A2BC0 /* Project object */;
+}
