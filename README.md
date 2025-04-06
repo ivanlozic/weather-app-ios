@@ -1,31 +1,63 @@
-LUCID WEATHER is a simple iOS application that displays current weather forecasts for selected cities using the OpenWeather API. The app follows MVC architecture and uses CoreData for local storage, with a tab-based navigation system.
+# 🌤 LUCID WEATHER
 
-<img width="399" alt="image" src="https://github.com/user-attachments/assets/8662b060-0ad1-4940-8f05-0793d4ea72e0" />
-<img width="375" alt="image" src="https://github.com/user-attachments/assets/96890839-27db-4ece-806a-62ec34e70067" />
-<img width="381" alt="image" src="https://github.com/user-attachments/assets/fdd38a01-cfd0-4228-a161-a08f2398f05d" />
+A clean, intuitive iOS weather application that delivers current forecasts for selected cities and current location. Built with Swift using the OpenWeather API.
 
-Features
-Two-tab interface (Forecast and History)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8662b060-0ad1-4940-8f05-0793d4ea72e0" width="200" height="400" alt="Forecast Screen">
+  <img src="https://github.com/user-attachments/assets/96890839-27db-4ece-806a-62ec34e70067" width="200" height="400" alt="History Screen"> 
+  <img src="https://github.com/user-attachments/assets/fdd38a01-cfd0-4228-a161-a08f2398f05d" width="200" height="400" alt="Location Screen">
+</p>
 
-Display current weather for 4 predefined cities (Rijeka, Zagreb, Split, New York)
+## ✨ Features
 
-Get weather for current location
+### 🌍 Current Weather
+- Real-time weather data for 4 predefined cities (Rijeka, Zagreb, Split, New York)
+- Automatic location detection for current position
+- Detailed weather metrics:
+  - Temperature (ºC/ºF)
+  - Humidity
+  - Wind speed
+  - Feels like
 
-Save forecasts to local storage
+### 📚 History Tracking
+- Persistent storage of past forecasts using CoreData
+- View saved weather reports
+- Swipe-to-delete functionality
+- Timestamped entries
 
-View and delete saved forecasts
+### 🎛 User Interface
+- Clean, minimalist design
+- Tab-based navigation (Forecast/History)
+- Segmented control for temperature unit selection
 
-Technical Specifications
-Language: Swift
+## 🛠 Technical Implementation
 
-IDE: Xcode
+### Architecture
+- **MVC** design pattern
 
-Design Patterns: MVC, Delegation
+### Technologies
+| Component       | Technology |
+|-----------------|------------|
+| Language        | Swift      |
+| Persistence     | CoreData   |
+| Networking      | URLSession |
+| API             | OpenWeather Current Weather Data |
+| UI Framework    | UIKit      |
 
-Persistence: CoreData
+### Key Components
+- `UITabBarController` for main navigation
+- `UINavigationController` for hierarchical views  
+- `UITableView` with custom cells for weather display
+- `UISegmentedControl` for temperature unit selection
 
-Networking: URLSession
+## 📲 Installation
 
-API: OpenWeather Current Weather Data API
+### Requirements
+- iOS 15.0+
+- Xcode 13+
+- OpenWeather API key
 
-UI Components: UITabBarController, UINavigationController, UITableView, UISegmentedControl
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ivanlozic/weather-app-ios.git
