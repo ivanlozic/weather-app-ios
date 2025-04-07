@@ -24,7 +24,6 @@ class HistoryWeatherViewController: UITableViewController {
         updateEmptyState()
     }
 
-    
     private func configureViewController() {
         title = "Weather History"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -33,11 +32,10 @@ class HistoryWeatherViewController: UITableViewController {
     }
     
     private func configureTableView() {
-        tableView.register(HistoryCell.self, forCellReuseIdentifier: HistoryCell.reuseID)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 80
         tableView.separatorStyle = .none
         tableView.backgroundColor = .systemGroupedBackground
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100 
     }
     
     private func configureEmptyState() {

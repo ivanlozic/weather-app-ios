@@ -42,10 +42,9 @@ class WeatherDetailsViewController: UIViewController {
         tempUnitSegmentedControl.setTitle("°C", forSegmentAt: 0)
         tempUnitSegmentedControl.setTitle("°F", forSegmentAt: 1)
         tempUnitSegmentedControl.selectedSegmentIndex = 0
-        tempUnitSegmentedControl.addTarget(self, action: #selector(temperatureUnitChanged), for: .valueChanged)
     }
     
-    @objc private func temperatureUnitChanged() {
+    @IBAction func temperatureUnitChanged(_ sender: Any) {
         isCelsius = tempUnitSegmentedControl.selectedSegmentIndex == 0
     }
     
@@ -69,7 +68,6 @@ class WeatherDetailsViewController: UIViewController {
         }
     }
 
-    
     private func celsiusToFahrenheit(_ celsius: Double) -> Double {
         return celsius * 9/5 + 32
     }
@@ -132,6 +130,9 @@ class WeatherDetailsViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true)
     }
+    
+    
+    
     
     @IBAction func saveWeatherButtonTapped(_ sender: Any) {
         guard let city = city, let weather = weatherData else {
