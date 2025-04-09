@@ -14,7 +14,7 @@ class CoreDataManager {
         }
     }
     
-    var context: NSManagedObjectContext {
+     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
@@ -27,15 +27,11 @@ class CoreDataManager {
         saveContext()
     }
     
-    func fetchForecasts(completion: @escaping ([Forecast]) -> Void) {
-        let request: NSFetchRequest<Forecast> = Forecast.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
-        
-        context.perform {
-            let results = (try? self.context.fetch(request)) ?? []
-            completion(results)
-        }
-    }
+    static func forecastFetchRequest() -> NSFetchRequest<Forecast> {
+         let fetchRequest: NSFetchRequest<Forecast> = Forecast.fetchRequest()
+         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+         return fetchRequest
+     }
 
     func deleteForecast(_ forecast: Forecast) {
         context.delete(forecast)

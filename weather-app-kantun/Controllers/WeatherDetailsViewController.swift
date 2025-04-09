@@ -6,6 +6,7 @@ class WeatherDetailsViewController: UIViewController {
     var longitude: Double?
     var latitude: Double?
     private var weatherData: Weather?
+    
     private var isCelsius = true {
         didSet {
             updateTemperatureDisplay()
@@ -22,35 +23,27 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var tempUnitSegmentedControl: UISegmentedControl!
     @IBOutlet weak var saveWeatherButton: UIButton!
     
-    
-    private enum Constants {
-        static let weatherIconURL = "https://openweathermap.org/img/wn/"
-        static let errorTitle = "Error"
-        static let successTitle = "Success"
-        static let saveSuccessMessage = "Weather saved successfully!"
-        static let saveFailureMessage = "Failed to save weather data"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupInitialUI()
         fetchWeatherData()
-    }
-    
-    private func setupUI() {
-        cityNameLabel.text = city ?? "Unknown City"
-        tempUnitSegmentedControl.setTitle("°C", forSegmentAt: 0)
-        tempUnitSegmentedControl.setTitle("°F", forSegmentAt: 1)
-        tempUnitSegmentedControl.selectedSegmentIndex = 0
     }
     
     @IBAction func temperatureUnitChanged(_ sender: Any) {
         isCelsius = tempUnitSegmentedControl.selectedSegmentIndex == 0
     }
     
+    @IBAction func saveWeatherButtonTapped(_ sender: Any) {
+        saveWeatherData()
+    }
+    
+    private func setupInitialUI() {
+        cityNameLabel.text = city ?? WeatherConstants.Defaults.unknownCity
+    }
+    
     private func fetchWeatherData() {
         guard let lat = latitude, let lon = longitude else {
-            showError(message: "Invalid location coordinates")
+            showError(message: WeatherConstants.Alerts.Messages.invalidCoordinates)
             return
         }
 
@@ -62,10 +55,28 @@ class WeatherDetailsViewController: UIViewController {
                     self.weatherData = weather
                     self.updateWeatherUI(with: weather)
                 } else {
-                    self.showError(message: "Failed to fetch weather data")
+                    self.showError(message: WeatherConstants.Alerts.Messages.fetchFailed)
                 }
             }
         }
+    }
+    
+    private func saveWeatherData() {
+        guard let city = city, let weather = weatherData else {
+            showError(message: WeatherConstants.Alerts.Messages.missingData)
+            return
+        }
+        
+        CoreDataManager.shared.saveForecast(
+            city: city,
+            temperature: weather.main.temp,
+            date: Date()
+        )
+        
+        showAlert(
+            title: WeatherConstants.Alerts.successTitle,
+            message: WeatherConstants.Alerts.Messages.saveSuccess
+        )
     }
 
     private func celsiusToFahrenheit(_ celsius: Double) -> Double {
@@ -75,19 +86,12 @@ class WeatherDetailsViewController: UIViewController {
     private func updateTemperatureDisplay() {
         guard let weather = weatherData else { return }
         
-        let temp: Double
-        let feelsLikeTemp: Double
+        let temp = isCelsius ? weather.main.temp : celsiusToFahrenheit(weather.main.temp)
+        let feelsLikeTemp = isCelsius ? weather.main.feelsLike : celsiusToFahrenheit(weather.main.feelsLike)
+        let unitSymbol = isCelsius ? WeatherConstants.Temperature.celsiusSymbol : WeatherConstants.Temperature.fahrenheitSymbol
         
-        if isCelsius {
-            temp = weather.main.temp
-            feelsLikeTemp = weather.main.feelsLike
-        } else {
-            temp = celsiusToFahrenheit(weather.main.temp)
-            feelsLikeTemp = celsiusToFahrenheit(weather.main.feelsLike)
-        }
-        
-        currentTempLabel.text = String(format: "Temperature: %.1f%@", temp, isCelsius ? "°C" : "°F")
-        feelsLikeTempLabel.text = String(format: "Feels like: %.1f%@", feelsLikeTemp, isCelsius ? "°C" : "°F")
+        currentTempLabel.text = String(format: WeatherConstants.Format.temperature, temp, unitSymbol)
+        feelsLikeTempLabel.text = String(format: WeatherConstants.Format.temperature, feelsLikeTemp, unitSymbol)
     }
     
     private func updateWeatherUI(with weather: Weather) {
@@ -97,17 +101,15 @@ class WeatherDetailsViewController: UIViewController {
         
         weatherDescLabel.text = weatherInfo.description.capitalized
         loadWeatherIcon(iconCode: weatherInfo.icon)
-        windSpeedValueLabel.text = String(format: "Wind: %.1f m/s", weather.wind.speed)
-        humidityValueLabel.text = String(format: "Humidity: %d%%", weather.main.humidity)
-        cityNameLabel.text = weather.name.isEmpty ? "Unknown City" : weather.name
+        windSpeedValueLabel.text = String(format: WeatherConstants.Format.windSpeed, weather.wind.speed)
+        humidityValueLabel.text = String(format: WeatherConstants.Format.humidity, weather.main.humidity)
+        cityNameLabel.text = weather.name.isEmpty ? WeatherConstants.Defaults.unknownCity : weather.name
     }
     
     private func loadWeatherIcon(iconCode: String) {
-        let iconUrl = Constants.weatherIconURL + "\(iconCode)@2x.png"
+        guard let url = WeatherConstants.API.weatherIconURL(for: iconCode) else { return }
         
-        guard let url = URL(string: iconUrl) else { return }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let self = self,
                   let data = data,
                   error == nil,
@@ -121,42 +123,24 @@ class WeatherDetailsViewController: UIViewController {
     }
 
     private func showError(message: String) {
-        showAlert(title: Constants.errorTitle, message: message, isError: true)
+        showAlert(
+            title: WeatherConstants.Alerts.errorTitle,
+            message: message,
+            isError: true
+        )
     }
     
     private func showAlert(title: String, message: String, isError: Bool = false) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: isError ? .destructive : .default)
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let action = UIAlertAction(
+            title: WeatherConstants.Alerts.okButton,
+            style: isError ? .destructive : .default
+        )
         alert.addAction(action)
         present(alert, animated: true)
-    }
-    
-    
-    
-    
-    @IBAction func saveWeatherButtonTapped(_ sender: Any) {
-        guard let city = city, let weather = weatherData else {
-            showAlert(title: Constants.errorTitle, message: "City or weather data is missing", isError: true)
-            return
-        }
-        
-        saveWeatherData(city: city, weather: weather)
-    }
-    
-    private func saveWeatherData(city: String, weather: Weather) {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        let newWeatherRecord = Forecast(context: context)
-        
-        newWeatherRecord.cityName = city
-        newWeatherRecord.temperature = weather.main.temp
-        newWeatherRecord.windSpeed = weather.wind.speed
-        newWeatherRecord.date = Date()
-        
-        do {
-            try context.save()
-            showAlert(title: Constants.successTitle, message: Constants.saveSuccessMessage)
-        } catch {
-            showAlert(title: Constants.errorTitle, message: Constants.saveFailureMessage, isError: true)
-        }
     }
 }

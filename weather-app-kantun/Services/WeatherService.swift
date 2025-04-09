@@ -2,12 +2,6 @@ import Foundation
 import UIKit
 
 class WeatherService {
-    private static var apiKey: String {
-        guard let key = Bundle.main.object(forInfoDictionaryKey: "WeatherAPIKey") as? String else {
-            fatalError("❌ Weather API key not found in Info.plist")
-        }
-        return key
-    }
 
     static func fetchWeather(lat: Double, lon: Double, completion: @escaping (Weather?) -> Void) {
         let urlString = "\(Constants.API.baseURL)\(Constants.API.weatherEndpoint)?lat=\(lat)&lon=\(lon)&appid=\(Constants.API.apiKey)&units=metric"

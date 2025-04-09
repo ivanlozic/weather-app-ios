@@ -10,20 +10,17 @@ private enum CitiesConstants {
     static let buttonBottomMargin: CGFloat = 30
     static let cellHeight: CGFloat = 70
     static let cityCellIdentifier = "CityTableViewCell"
-    static let navBarHeight: CGFloat = 44
 }
 
 // MARK: - CitiesTableViewController
 
 class CitiesViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
     
-    
     @IBOutlet weak var citiesTableView: UITableView!
     @IBOutlet weak var currentLocationButton: UIButton!
     // MARK: - Properties
     
-  
-    private let cities = [
+     private let cities = [
         ("Rijeka", 45.3271, 14.4422),
         ("Zagreb", 45.8150, 15.9819),
         ("Split", 43.5081, 16.4402),
@@ -41,29 +38,18 @@ class CitiesViewController: UIViewController,UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
+        title = "Weather Forecast"
         setupTableView()
         setupLocationManager()
     }
     
     // MARK: - UI Setup
-    
-    private func setupNavigationBar() {
-        title = "Weather Forecast"
-        navigationController?.navigationBar.prefersLargeTitles = false
-        
-        if let navigationBar = navigationController?.navigationBar {
-            navigationBar.frame.size.height = CitiesConstants.navBarHeight
-        }
-    }
-    
+
     private func setupTableView() {
         citiesTableView.delegate = self
         citiesTableView.dataSource = self
-        citiesTableView.separatorStyle = .none
     }
     
-
     private func setupLocationManager() {
         locationManager.delegate = self 
         locationManager.requestWhenInUseAuthorization()

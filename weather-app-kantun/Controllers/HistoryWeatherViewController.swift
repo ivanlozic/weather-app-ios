@@ -3,54 +3,23 @@ import CoreData
 
 class HistoryWeatherViewController: UITableViewController {
     
+    @IBOutlet weak var emptyStateLabel: UILabel!
+    
     private var fetchedResultsController: NSFetchedResultsController<Forecast>!
-    private let emptyStateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "No weather history yet."
-        label.textColor = .secondaryLabel
-        label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.isHidden = true
-        return label
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewController()
-        configureTableView()
-        configureEmptyState()
         setupFetchedResultsController()
         updateEmptyState()
     }
 
-    private func configureViewController() {
-        title = "Weather History"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.isHidden = false
-        view.backgroundColor = .systemBackground
-    }
-    
-    private func configureTableView() {
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .systemGroupedBackground
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100 
-    }
-    
-    private func configureEmptyState() {
-        tableView.backgroundView = emptyStateLabel
-    }
-    
     private func updateEmptyState() {
         let hasData = fetchedResultsController.fetchedObjects?.isEmpty == false
         emptyStateLabel.isHidden = hasData
     }
     
     private func setupFetchedResultsController() {
-        let fetchRequest: NSFetchRequest<Forecast> = Forecast.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let fetchRequest = CoreDataManager.forecastFetchRequest()
         
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
@@ -67,7 +36,6 @@ class HistoryWeatherViewController: UITableViewController {
             presentAlert(title: "Error", message: "Failed to load history: \(error.localizedDescription)")
         }
     }
-    
     private func deleteForecast(_ forecast: Forecast) {
         CoreDataManager.shared.deleteForecast(forecast)
         updateEmptyState()
@@ -84,12 +52,13 @@ extension HistoryWeatherViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = fetchedResultsController.sections?[section].numberOfObjects ?? 0
+
         emptyStateLabel.isHidden = count > 0
         return count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryCell.reuseID, for: indexPath) as? HistoryCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as? HistoryCell else {
             return UITableViewCell()
         }
 
@@ -137,17 +106,8 @@ extension HistoryWeatherViewController: NSFetchedResultsControllerDelegate {
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
-        case .update:
-            if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? HistoryCell {
-                let forecast = fetchedResultsController.object(at: indexPath)
-                cell.configure(with: forecast)
-            }
-        case .move:
-            if let indexPath = indexPath, let newIndexPath = newIndexPath {
-                tableView.moveRow(at: indexPath, to: newIndexPath)
-            }
-        @unknown default:
-            fatalError()
+        default:
+            break
         }
     }
     

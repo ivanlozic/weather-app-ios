@@ -1,7 +1,6 @@
 import UIKit
 
 class HistoryCell: UITableViewCell {
-    static let reuseID = "HistoryCell"
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var cityLabel: UILabel!
@@ -14,24 +13,23 @@ class HistoryCell: UITableViewCell {
     }
 
     private func configure() {
-        selectionStyle = .none
-        backgroundColor = .clear
-        containerView.layer.cornerRadius = 12
         containerView.layer.masksToBounds = true
+        containerView.layer.borderWidth = 0.5
+        containerView.layer.borderColor = UIColor.systemGray4.cgColor
     }
 
     func configure(with forecast: Forecast) {
         cityLabel.text = forecast.cityName
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
-        if let date = forecast.date {
-            dateLabel.text = dateFormatter.string(from: date)
-        } else {
-            dateLabel.text = "N/A"
-        }
-
+        dateLabel.text = formattedDate(from: forecast.date)
         tempLabel.text = String(format: "%.2f°C", forecast.temperature)
     }
+    
+    private func formattedDate(from date: Date?) -> String {
+          guard let date = date else { return "N/A" }
+          let formatter = DateFormatter()
+          formatter.dateStyle = .medium
+          formatter.timeStyle = .short
+          
+          return formatter.string(from: date)
+      }
 }
